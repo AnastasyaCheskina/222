@@ -31,7 +31,7 @@ namespace SimpleksMethod
             Console.WriteLine();
             Console.WriteLine("Результат:");
             showMatrix(matrix);
-            
+            getAnswer(matrix,rows, columns);
         }
         static double[,] initMatrix() //инициализация
         {
@@ -143,6 +143,11 @@ namespace SimpleksMethod
             divideOnFoundedEl(matrix, row, column, rows, columns); //делим строку на нужный элемент
             divideAllColumns(matrix, row, column, rows, columns); //делим столбцы
         }
-        
+        static double getAnswer(double[,] matrix, int rows, int columns) //получить ответ
+        {
+            double answer = matrix[rows - 1, columns - 1] * (-1);
+            Console.WriteLine("F = " + answer);
+            return answer;
+        }
     }
 }
